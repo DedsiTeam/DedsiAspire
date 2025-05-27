@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>DedsiServiceA</RootNamespace>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DedsiServiceA.Domain\DedsiServiceA.Domain.csproj" />
+      <ProjectReference Include="..\DedsiServiceA.Infrastructure\DedsiServiceA.Infrastructure.csproj" />
+      <ProjectReference Include="..\DedsiServiceA.Shared\DedsiServiceA.Shared.csproj" />
+    </ItemGroup>
+
+</Project>
