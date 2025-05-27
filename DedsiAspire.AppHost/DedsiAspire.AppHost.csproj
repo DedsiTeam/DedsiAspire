@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DedsiAuthCenter\DedsiAuthCenter.Host\DedsiAuthCenter.Host.csproj" />
     <ProjectReference Include="..\DedsiServiceA\host\DedsiServiceA.Host\DedsiServiceA.Host.csproj" />
     <ProjectReference Include="..\DedsiServiceB\host\DedsiServiceB.Host\DedsiServiceB.Host.csproj" />
     <ProjectReference Include="..\DedsiServiceC\host\DedsiServiceC.Host\DedsiServiceC.Host.csproj" />

@@ -11,4 +11,7 @@ var dedsiServiceB = builder
 var dedsiServiceC = builder.AddProject<Projects.DedsiServiceC_Host>("DedsiServiceC");
 
 
+var dedsiAuthCenter = builder.AddProject<Projects.DedsiAuthCenter_Host>("DedsiAuthCenter");
+
+
 builder.Build().Run();

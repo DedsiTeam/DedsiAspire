@@ -63,6 +63,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedsiAspire.ServiceDefaults
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedsiServiceA.HttpApi.Client", "DedsiServiceA\src\DedsiServiceA.HttpApi.Client\DedsiServiceA.HttpApi.Client.csproj", "{99C731B1-FCE4-EAC5-5992-150F05B52C89}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DedsiAuthCenter", "DedsiAuthCenter", "{B124734F-6E43-4690-A115-CBF85800E598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedsiAuthCenter.Host", "DedsiAuthCenter\DedsiAuthCenter.Host\DedsiAuthCenter.Host.csproj", "{08214EA8-D49A-AC72-DE50-9983CA48D172}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +157,10 @@ Global
 		{99C731B1-FCE4-EAC5-5992-150F05B52C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99C731B1-FCE4-EAC5-5992-150F05B52C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99C731B1-FCE4-EAC5-5992-150F05B52C89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08214EA8-D49A-AC72-DE50-9983CA48D172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08214EA8-D49A-AC72-DE50-9983CA48D172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08214EA8-D49A-AC72-DE50-9983CA48D172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08214EA8-D49A-AC72-DE50-9983CA48D172}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -183,6 +191,7 @@ Global
 		{54D5D554-530E-1C26-A3E5-AADD9186CC2A} = {56DF0C98-7675-42CC-BB94-C15B35EC887B}
 		{8B47DCA8-1DD4-7D53-47C3-327D8AB0848E} = {56DF0C98-7675-42CC-BB94-C15B35EC887B}
 		{99C731B1-FCE4-EAC5-5992-150F05B52C89} = {DB12C3F8-11AA-4FEB-8625-7C2618A475EB}
+		{08214EA8-D49A-AC72-DE50-9983CA48D172} = {B124734F-6E43-4690-A115-CBF85800E598}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3BE71C5-4564-410A-A1DF-DA164F873F01}
