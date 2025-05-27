@@ -1,6 +1,5 @@
 ﻿using Dedsi.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using DedsiServiceC.Users;
 using Volo.Abp.Data;
 
 namespace DedsiServiceC.EntityFrameworkCore;
@@ -9,7 +8,6 @@ namespace DedsiServiceC.EntityFrameworkCore;
 public class DedsiServiceCDbContext(DbContextOptions<DedsiServiceCDbContext> options) 
     : DedsiEfCoreDbContext<DedsiServiceCDbContext>(options)
 {
-    public DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
