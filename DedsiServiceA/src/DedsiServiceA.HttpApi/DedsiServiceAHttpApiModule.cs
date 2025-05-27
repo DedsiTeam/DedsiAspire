@@ -1,10 +1,13 @@
 ﻿using Dedsi.AspNetCore;
+using DedsiServiceA.HttpApi.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Modularity;
 
 namespace DedsiServiceA;
 
 [DependsOn(
+    typeof(DedsiServiceAHttpApiClientModule),
+
     typeof(DedsiServiceAUseCaseModule),
     typeof(DedsiAspNetCoreModule)
 )]

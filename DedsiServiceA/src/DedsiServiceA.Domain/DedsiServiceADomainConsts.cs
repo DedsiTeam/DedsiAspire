@@ -4,7 +4,7 @@ namespace DedsiServiceA;
 
 public class DedsiServiceADomainConsts : DedsiCleanArchitectureDomainConsts
 {
-    public const string ApplicationName = "ProjectName";
+    public const string ApplicationName = "DedsiServiceA";
     
     public const string MobileApplicationName = "ProjectName.Mobile";
     

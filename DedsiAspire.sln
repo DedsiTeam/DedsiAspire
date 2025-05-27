@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedsiAspire.AppHost", "Deds
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedsiAspire.ServiceDefaults", "DedsiAspire.ServiceDefaults\DedsiAspire.ServiceDefaults.csproj", "{A7B5B333-5050-09A4-EB75-6B891B6475A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedsiServiceA.HttpApi.Client", "DedsiServiceA\src\DedsiServiceA.HttpApi.Client\DedsiServiceA.HttpApi.Client.csproj", "{99C731B1-FCE4-EAC5-5992-150F05B52C89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{A7B5B333-5050-09A4-EB75-6B891B6475A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7B5B333-5050-09A4-EB75-6B891B6475A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7B5B333-5050-09A4-EB75-6B891B6475A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99C731B1-FCE4-EAC5-5992-150F05B52C89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C731B1-FCE4-EAC5-5992-150F05B52C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99C731B1-FCE4-EAC5-5992-150F05B52C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99C731B1-FCE4-EAC5-5992-150F05B52C89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +182,7 @@ Global
 		{803F1B39-D435-D932-B2A3-BA7B5FA8A8CD} = {56DF0C98-7675-42CC-BB94-C15B35EC887B}
 		{54D5D554-530E-1C26-A3E5-AADD9186CC2A} = {56DF0C98-7675-42CC-BB94-C15B35EC887B}
 		{8B47DCA8-1DD4-7D53-47C3-327D8AB0848E} = {56DF0C98-7675-42CC-BB94-C15B35EC887B}
+		{99C731B1-FCE4-EAC5-5992-150F05B52C89} = {DB12C3F8-11AA-4FEB-8625-7C2618A475EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3BE71C5-4564-410A-A1DF-DA164F873F01}

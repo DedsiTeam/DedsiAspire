@@ -12,6 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\DedsiServiceA.HttpApi.Client\DedsiServiceA.HttpApi.Client.csproj" />
         <ProjectReference Include="..\DedsiServiceA.UseCase\DedsiServiceA.UseCase.csproj" />
     </ItemGroup>
 
