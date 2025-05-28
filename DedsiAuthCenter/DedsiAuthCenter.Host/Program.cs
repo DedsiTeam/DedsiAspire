@@ -1,3 +1,5 @@
+using DedsiAuthCenter.Host.Apis;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
@@ -12,5 +14,7 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.MapAuthApis();
 
 app.Run();
