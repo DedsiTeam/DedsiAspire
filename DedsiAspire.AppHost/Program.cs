@@ -27,6 +27,13 @@ var DedsiServiceC = builder
     .WaitFor(DedsiAuthCenter);
 
 
+var DedsiIdentity = builder
+    .AddProject<Projects.DedsiIdentity_Host>("DedsiIdentity")
+    .WithExternalHttpEndpoints()
+    .WithReference(DedsiAuthCenter)
+    .WaitFor(DedsiAuthCenter);
+
+
 
 
 builder.Build().Run();
