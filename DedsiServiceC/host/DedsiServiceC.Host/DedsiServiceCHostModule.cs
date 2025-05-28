@@ -128,7 +128,7 @@ public class DedsiServiceCHostModule : AbpModule
         
             foreach (var moduleName in _moduleNames)
             {
-                options.SwaggerDoc(moduleName, new OpenApiInfo { Title = $"{moduleName} Module Api", Version = "v1" });
+                options.SwaggerDoc(moduleName, new OpenApiInfo { Title = $"{moduleName} Application Api", Version = "v1" });
             }
             #endregion
         });
@@ -184,7 +184,7 @@ public class DedsiServiceCHostModule : AbpModule
             options.DefaultModelExpandDepth(-1);
             foreach (var moduleName in _moduleNames)
             {
-                options.SwaggerEndpoint($"/swagger/{moduleName}/swagger.json", $"{moduleName} Module Api v1");
+                options.SwaggerEndpoint($"/swagger/{moduleName}/swagger.json", $"{moduleName} Application Api v1");
             }
         });
         
