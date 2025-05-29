@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>DedsiLogs</RootNamespace>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DedsiLogs.Domain\DedsiLogs.Domain.csproj" />
+      <ProjectReference Include="..\DedsiLogs.Infrastructure\DedsiLogs.Infrastructure.csproj" />
+      <ProjectReference Include="..\DedsiLogs.Shared\DedsiLogs.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

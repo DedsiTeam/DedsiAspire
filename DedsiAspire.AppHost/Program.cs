@@ -5,27 +5,6 @@ var MessagingRabbitMQ = builder.AddRabbitMQ("MessagingRabbitMQ")
 
 var DedsiAuthCenter = builder.AddProject<Projects.DedsiAuthCenter_Host>("DedsiAuthCenter");
 
-var DedsiServiceA = builder
-    .AddProject<Projects.DedsiServiceA_Host>("DedsiServiceA")
-    .WithExternalHttpEndpoints()
-    .WithReference(DedsiAuthCenter)
-    .WaitFor(DedsiAuthCenter)
-    .WithReference(MessagingRabbitMQ);
-
-var DedsiServiceB = builder
-    .AddProject<Projects.DedsiServiceB_Host>("DedsiServiceB")
-    .WithExternalHttpEndpoints()
-    .WithReference(DedsiServiceA)
-    .WaitFor(DedsiServiceA)
-    .WithReference(DedsiAuthCenter)
-    .WaitFor(DedsiAuthCenter);
-
-var DedsiServiceC = builder
-    .AddProject<Projects.DedsiServiceC_Host>("DedsiServiceC")
-    .WithExternalHttpEndpoints()
-    .WithReference(DedsiAuthCenter)
-    .WaitFor(DedsiAuthCenter);
-
 
 var DedsiIdentity = builder
     .AddProject<Projects.DedsiIdentity_Host>("DedsiIdentity")
@@ -33,7 +12,10 @@ var DedsiIdentity = builder
     .WithReference(DedsiAuthCenter)
     .WaitFor(DedsiAuthCenter);
 
-
-
+var DedsiLog = builder
+    .AddProject<Projects.DedsiLogs_Host>("DedsiLogs")
+    .WithExternalHttpEndpoints()
+    .WithReference(DedsiAuthCenter)
+    .WaitFor(DedsiAuthCenter);
 
 builder.Build().Run();
