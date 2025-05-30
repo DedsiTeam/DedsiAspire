@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json.schemastore.org/aspire-8.0.json",
+  "resources": {
+    "DedsiAuthCenter": {
+      "type": "project.v0",
+      "path": "../DedsiAuthCenter/DedsiAuthCenter.Host/DedsiAuthCenter.Host.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "HTTP_PORTS": "{DedsiAuthCenter.bindings.http.targetPort}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http"
+        }
+      }
+    },
+    "DedsiIdentity": {
+      "type": "project.v0",
+      "path": "../DedsiIdentity/DedsiIdentity.Host/DedsiIdentity.Host.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "HTTP_PORTS": "{DedsiIdentity.bindings.http.targetPort}",
+        "services__DedsiAuthCenter__http__0": "{DedsiAuthCenter.bindings.http.url}",
+        "services__DedsiAuthCenter__https__0": "{DedsiAuthCenter.bindings.https.url}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http",
+          "external": true
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http",
+          "external": true
+        }
+      }
+    },
+    "DedsiLog": {
+      "type": "project.v0",
+      "path": "../DedsiLogs/DedsiLogs.Host/DedsiLogs.Host.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "HTTP_PORTS": "{DedsiLog.bindings.http.targetPort}",
+        "services__DedsiAuthCenter__http__0": "{DedsiAuthCenter.bindings.http.url}",
+        "services__DedsiAuthCenter__https__0": "{DedsiAuthCenter.bindings.https.url}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http",
+          "external": true
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http",
+          "external": true
+        }
+      }
+    },
+    "PublicApiGateway": {
+      "type": "project.v0",
+      "path": "../DedsiApiGateway/PublicApiGateway/PublicApiGateway.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "HTTP_PORTS": "{PublicApiGateway.bindings.http.targetPort}",
+        "services__DedsiAuthCenter__http__0": "{DedsiAuthCenter.bindings.http.url}",
+        "services__DedsiAuthCenter__https__0": "{DedsiAuthCenter.bindings.https.url}",
+        "services__DedsiIdentity__http__0": "{DedsiIdentity.bindings.http.url}",
+        "services__DedsiIdentity__https__0": "{DedsiIdentity.bindings.https.url}",
+        "services__DedsiLog__http__0": "{DedsiLog.bindings.http.url}",
+        "services__DedsiLog__https__0": "{DedsiLog.bindings.https.url}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http"
+        }
+      }
+    }
+  }
+}

@@ -31,3 +31,15 @@ go
 use DedsiAuthCenterDB
 go
 ```
+
+
+## Aspire Docker Compose
+```
+https://prom3theu5.github.io/aspirational-manifests/installing-as-a-global-tool.html
+
+dotnet tool install -g aspirate
+
+cd /path/to/your/project/AppHost
+
+aspirate generate --output-format compose
+```

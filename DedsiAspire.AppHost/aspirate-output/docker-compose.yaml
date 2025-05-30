@@ -1,0 +1,75 @@
+services:
+  aspire-dashboard:
+    container_name: "aspire-dashboard"
+    image: "mcr.microsoft.com/dotnet/aspire-dashboard:9.2"
+    environment:
+      DOTNET_DASHBOARD_UNSECURED_ALLOW_ANONYMOUS: "false"
+    ports:
+    - target: 18888
+      published: 18888
+    restart: unless-stopped
+  DedsiAuthCenter:
+    container_name: "DedsiAuthCenter"
+    image: "dedsiauthcenter:latest"
+    environment:
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES: "true"
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES: "true"
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY: "in_memory"
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+      HTTP_PORTS: "8080"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://aspire-dashboard:18889"
+      OTEL_SERVICE_NAME: "DedsiAuthCenter"
+    ports:
+    - target: 8080
+      published: 10000
+    restart: unless-stopped
+  DedsiIdentity:
+    container_name: "DedsiIdentity"
+    image: "dedsiidentity:latest"
+    environment:
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES: "true"
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES: "true"
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY: "in_memory"
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+      HTTP_PORTS: "8080"
+      services__DedsiAuthCenter__http__0: "http://DedsiAuthCenter:8080"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://aspire-dashboard:18889"
+      OTEL_SERVICE_NAME: "DedsiIdentity"
+    ports:
+    - target: 8080
+      published: 10002
+    restart: unless-stopped
+  DedsiLog:
+    container_name: "DedsiLog"
+    image: "dedsilog:latest"
+    environment:
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES: "true"
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES: "true"
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY: "in_memory"
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+      HTTP_PORTS: "8080"
+      services__DedsiAuthCenter__http__0: "http://DedsiAuthCenter:8080"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://aspire-dashboard:18889"
+      OTEL_SERVICE_NAME: "DedsiLog"
+    ports:
+    - target: 8080
+      published: 10004
+    restart: unless-stopped
+  PublicApiGateway:
+    container_name: "PublicApiGateway"
+    image: "publicapigateway:latest"
+    environment:
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES: "true"
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES: "true"
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY: "in_memory"
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+      HTTP_PORTS: "8080"
+      services__DedsiAuthCenter__http__0: "http://DedsiAuthCenter:8080"
+      services__DedsiIdentity__http__0: "http://DedsiIdentity:8080"
+      services__DedsiLog__http__0: "http://DedsiLog:8080"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://aspire-dashboard:18889"
+      OTEL_SERVICE_NAME: "PublicApiGateway"
+    ports:
+    - target: 8080
+      published: 10006
+    restart: unless-stopped
