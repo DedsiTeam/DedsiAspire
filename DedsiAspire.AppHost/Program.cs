@@ -10,18 +10,15 @@ var DedsiIdentity = builder
     .WaitFor(DedsiAuthCenter);
 
 var DedsiLog = builder
-    .AddProject<Projects.DedsiLogs_Host>("DedsiLogs")
+    .AddProject<Projects.DedsiLogs_Host>("DedsiLog")
     .WithExternalHttpEndpoints()
     .WithReference(DedsiAuthCenter)
     .WaitFor(DedsiAuthCenter);
 
-var PublicApiGateway = builder.AddProject<Projects.PublicApiGateway>("PublicApiGateway")
-    .WithExternalHttpEndpoints()
+var PublicApiGateway = builder
+    .AddProject<Projects.PublicApiGateway>("PublicApiGateway")
     .WithReference(DedsiAuthCenter)
-    .WaitFor(DedsiAuthCenter)
     .WithReference(DedsiIdentity)
-    .WaitFor(DedsiIdentity)
-    .WithReference(DedsiLog)
-    .WaitFor(DedsiLog);
+    .WithReference(DedsiLog);
 
 builder.Build().Run();
