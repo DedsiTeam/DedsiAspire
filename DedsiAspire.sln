@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedsiLogs.Shared", "DedsiLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedsiLogs.UseCase", "DedsiLogs\DedsiLogs.UseCase\DedsiLogs.UseCase.csproj", "{AA879B29-CE3D-7BC7-BF55-84A45F3899DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DedsiApiGateway", "DedsiApiGateway", "{AB32B8BF-E64D-4DC3-B09C-BF8DBB4F2000}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicApiGateway", "DedsiApiGateway\PublicApiGateway\PublicApiGateway.csproj", "{715AC32F-911F-2A16-392B-5AAE6EC3D360}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,10 @@ Global
 		{AA879B29-CE3D-7BC7-BF55-84A45F3899DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA879B29-CE3D-7BC7-BF55-84A45F3899DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA879B29-CE3D-7BC7-BF55-84A45F3899DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{715AC32F-911F-2A16-392B-5AAE6EC3D360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{715AC32F-911F-2A16-392B-5AAE6EC3D360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{715AC32F-911F-2A16-392B-5AAE6EC3D360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{715AC32F-911F-2A16-392B-5AAE6EC3D360}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +96,7 @@ Global
 		{E94882F8-CF8C-6583-F95A-B128F4066A8F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{106FD800-C17F-2F71-54DA-4308FD08347B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{AA879B29-CE3D-7BC7-BF55-84A45F3899DC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{715AC32F-911F-2A16-392B-5AAE6EC3D360} = {AB32B8BF-E64D-4DC3-B09C-BF8DBB4F2000}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3BE71C5-4564-410A-A1DF-DA164F873F01}

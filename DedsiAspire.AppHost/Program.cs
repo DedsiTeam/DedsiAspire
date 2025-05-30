@@ -1,8 +1,5 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var MessagingRabbitMQ = builder.AddRabbitMQ("MessagingRabbitMQ")
-    .WithManagementPlugin();
-
 var DedsiAuthCenter = builder.AddProject<Projects.DedsiAuthCenter_Host>("DedsiAuthCenter");
 
 
@@ -17,5 +14,14 @@ var DedsiLog = builder
     .WithExternalHttpEndpoints()
     .WithReference(DedsiAuthCenter)
     .WaitFor(DedsiAuthCenter);
+
+var PublicApiGateway = builder.AddProject<Projects.PublicApiGateway>("PublicApiGateway")
+    .WithExternalHttpEndpoints()
+    .WithReference(DedsiAuthCenter)
+    .WaitFor(DedsiAuthCenter)
+    .WithReference(DedsiIdentity)
+    .WaitFor(DedsiIdentity)
+    .WithReference(DedsiLog)
+    .WaitFor(DedsiLog);
 
 builder.Build().Run();
