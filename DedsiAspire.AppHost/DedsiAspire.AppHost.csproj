@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DedsiApiGateway\PublicApiGateway\PublicApiGateway.csproj" />
+    <ProjectReference Include="..\ApiGateways\PublicApiGateway\PublicApiGateway.csproj" />
     <ProjectReference Include="..\DedsiAuthCenter\DedsiAuthCenter.Host\DedsiAuthCenter.Host.csproj" />
     <ProjectReference Include="..\DedsiIdentity\DedsiIdentity.Host\DedsiIdentity.Host.csproj" />
     <ProjectReference Include="..\DedsiLogs\DedsiLogs.Host\DedsiLogs.Host.csproj" />

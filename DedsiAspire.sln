@@ -29,9 +29,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedsiLogs.Shared", "DedsiLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DedsiLogs.UseCase", "DedsiLogs\DedsiLogs.UseCase\DedsiLogs.UseCase.csproj", "{AA879B29-CE3D-7BC7-BF55-84A45F3899DC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DedsiApiGateway", "DedsiApiGateway", "{AB32B8BF-E64D-4DC3-B09C-BF8DBB4F2000}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{AB32B8BF-E64D-4DC3-B09C-BF8DBB4F2000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicApiGateway", "DedsiApiGateway\PublicApiGateway\PublicApiGateway.csproj", "{715AC32F-911F-2A16-392B-5AAE6EC3D360}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicApiGateway", "ApiGateways\PublicApiGateway\PublicApiGateway.csproj", "{715AC32F-911F-2A16-392B-5AAE6EC3D360}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
