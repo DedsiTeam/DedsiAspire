@@ -5,6 +5,6 @@ namespace DedsiLogs;
 
 [ApiController]
 [Area(DedsiLogsDomainConsts.ApplicationName)]
-[Route("api/DedsiLogs/[controller]/[action]")]
+[Route("api/DedsiLog/[controller]/[action]")]
 [ApiExplorerSettings(GroupName = DedsiLogsDomainConsts.ApplicationName)]
 public abstract class DedsiLogsController : DedsiControllerBase;
